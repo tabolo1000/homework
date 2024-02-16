@@ -23,8 +23,7 @@ const Message: React.FC<MessagePropsType> = ({message}) => {
                         <p>{message.user.name}</p>
                     </div>
                     <pre id={'hw1-text-' + message.id} className={s.messageText}>
-                        <p>{message.message.text} Do you feel good?
-                        ?</p>
+                        <p>{message.message.text}</p>
                     </pre>
                 </BackgroundMessageStyle>
             </MessageStyled>
