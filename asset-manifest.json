@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/tabolo1000/homework/static/css/main.ed674493.css",
-    "main.js": "/tabolo1000/homework/static/js/main.3e5a7b34.js",
-    "static/js/111.393292fe.chunk.js": "/tabolo1000/homework/static/js/111.393292fe.chunk.js",
-    "index.html": "/tabolo1000/homework/index.html",
-    "main.ed674493.css.map": "/tabolo1000/homework/static/css/main.ed674493.css.map",
-    "main.3e5a7b34.js.map": "/tabolo1000/homework/static/js/main.3e5a7b34.js.map",
-    "111.393292fe.chunk.js.map": "/tabolo1000/homework/static/js/111.393292fe.chunk.js.map"
+    "main.css": "/homework/static/css/main.ed674493.css",
+    "main.js": "/homework/static/js/main.bd4c22fd.js",
+    "static/js/111.393292fe.chunk.js": "/homework/static/js/111.393292fe.chunk.js",
+    "index.html": "/homework/index.html",
+    "main.ed674493.css.map": "/homework/static/css/main.ed674493.css.map",
+    "main.bd4c22fd.js.map": "/homework/static/js/main.bd4c22fd.js.map",
+    "111.393292fe.chunk.js.map": "/homework/static/js/111.393292fe.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ed674493.css",
-    "static/js/main.3e5a7b34.js"
+    "static/js/main.bd4c22fd.js"
   ]
 }
