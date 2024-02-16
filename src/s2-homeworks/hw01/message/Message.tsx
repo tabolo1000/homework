@@ -46,7 +46,7 @@ export const BackgroundMessageStyle = styled.div`
 export const BlockMessageStyled = styled.div`
   display: grid;
   grid-template-columns: repeat(5, minmax(100px, auto));
-  grid-template-rows: minmax(100px, auto) 100px;
+  grid-template-rows: minmax(100px, auto) 20px;
   justify-items: end;
 
   & > :nth-child(2) {
