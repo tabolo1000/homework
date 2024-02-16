@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/git@github.com:tabolo1000/homework.git/static/css/main.ed674493.css",
+    "main.js": "/git@github.com:tabolo1000/homework.git/static/js/main.903c88f7.js",
+    "static/js/111.393292fe.chunk.js": "/git@github.com:tabolo1000/homework.git/static/js/111.393292fe.chunk.js",
+    "index.html": "/git@github.com:tabolo1000/homework.git/index.html",
+    "main.ed674493.css.map": "/git@github.com:tabolo1000/homework.git/static/css/main.ed674493.css.map",
+    "main.903c88f7.js.map": "/git@github.com:tabolo1000/homework.git/static/js/main.903c88f7.js.map",
+    "111.393292fe.chunk.js.map": "/git@github.com:tabolo1000/homework.git/static/js/111.393292fe.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ed674493.css",
+    "static/js/main.903c88f7.js"
+  ]
+}
