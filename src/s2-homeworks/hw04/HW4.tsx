@@ -1,6 +1,7 @@
 import React from 'react'
 import s2 from '../../s1-main/App.module.css'
 import Stand from './Stand'
+import {AllMassageStyled, HeaderStyled, HW1styled} from "../hw01/HW1";
 
 /*
 * 1 - понять (и простить) SuperInputText
@@ -11,13 +12,13 @@ import Stand from './Stand'
 
 const HW4 = () => {
     return (
-        <div id={'hw4'}>
-            <div className={s2.hwTitle}>Homework #4</div>
+        <HW1styled id={'hw4'}>
+            <HeaderStyled  className={s2.hwTitle}>Homework #4</HeaderStyled >
             {/*демонстрация возможностей компонент:*/}
-            <div className={s2.hw}>
+            <AllMassageStyled className={s2.hw}>
                 <Stand />
-            </div>
-        </div>
+            </AllMassageStyled>
+        </HW1styled>
     )
 }
 

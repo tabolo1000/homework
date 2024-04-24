@@ -1,18 +1,22 @@
 import React, {ChangeEvent, KeyboardEvent} from 'react'
 import s from './Greeting.module.css'
+import { ErrorTextAuthStyled,
+     InputMessageStyled,
+      PrimaryButton, TextAuthStyled } from '../hw01/HW1';
 
 type GreetingPropsType = {
-    name: any // need to fix any
-    setNameCallback: any // need to fix any
-    addUser: any // need to fix any
-    onBlur: any // need to fix any
-    onEnter: any // need to fix any
-    error: any // need to fix any
-    totalUsers: any // need to fix any
-    lastUserName?: any // need to fix any
-}
+    name: string;
+    setNameCallback: (e:ChangeEvent<HTMLInputElement>) => void;
+    addUser: () => void;
+    onBlur: () => void;
+    onEnter: (e: KeyboardEvent<HTMLInputElement>)=> void 
+    error: string; 
+    totalUsers: number;
+    lastUserName?: string; 
+};
 
-// презентационная компонента (для верстальщика)
+
+
 const Greeting: React.FC<GreetingPropsType> = (
     {
         name,
@@ -23,22 +27,24 @@ const Greeting: React.FC<GreetingPropsType> = (
         error,
         totalUsers,
         lastUserName,
-    } // деструктуризация пропсов
+    }
 ) => {
-    const inputClass = s.errorInput // need to fix with (?:)
+    const inputClass = error ? s.errorInput : s.input // need to fix with (?:)
 
     return (
         <div id={'hw3-form'} className={s.greetingForm}>
-            <div className={s.text}>
+            <TextAuthStyled> 
+        
                 {'Людей добавили: '}
                 <span id={'hw3-users-total'}>
                     {totalUsers}
                 </span>
-            </div>
+            </TextAuthStyled>
 
             <div className={s.inputAndButtonContainer}>
                 <div>
-                    <input
+                    <InputMessageStyled
+                        error={error}
                         id={'hw3-input'}
                         value={name}
                         onChange={setNameCallback}
@@ -46,19 +52,21 @@ const Greeting: React.FC<GreetingPropsType> = (
                         onKeyDown={onEnter}
                         onBlur={onBlur}
                     />
-                    <div id={'hw3-error'} className={s.error}>
-                        {error}
-                    </div>
-                </div>
-
-                <button
+                    <PrimaryButton
                     id={'hw3-button'}
                     onClick={addUser}
                     className={s.button}
                     disabled={!name.trim()}
                 >
-                    add
-                </button>
+                    Add
+                </PrimaryButton>
+                    
+                </div>
+                <ErrorTextAuthStyled id={'hw3-error'} className={s.error}>
+                        {error}
+                    </ErrorTextAuthStyled>
+
+                
             </div>
 
             {lastUserName && (
@@ -71,3 +79,5 @@ const Greeting: React.FC<GreetingPropsType> = (
 }
 
 export default Greeting
+
+

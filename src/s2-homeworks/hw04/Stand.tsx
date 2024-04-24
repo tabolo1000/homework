@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {ChangeEvent, useState, KeyboardEvent} from 'react'
 import s from './Stand.module.css'
 import SuperInputText from './common/c1-SuperInputText/SuperInputText'
 import SuperCheckbox from './common/c3-SuperCheckbox/SuperCheckbox'
@@ -9,6 +9,17 @@ const Stand = () => {
     const [error, setError] = useState<string>('')
 
     const [stateForAllCheckboxes, setChecked] = useState<boolean>(false)
+    const [myClass, setClass] = useState<boolean>(false)
+
+    const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        setValue(e.currentTarget.value)
+        setError("")
+    }
+    const prassButHandler = (e: KeyboardEvent<HTMLInputElement>) => {
+        if(e.code === "Enter" && stateForAllInputs.length === 0){
+            setError("Error")
+        }
+    }
 
     return (
         <div id={'hw4-stand'} className={s.stand}>
@@ -18,7 +29,8 @@ const Stand = () => {
                     <SuperInputText
                         id={'hw4-super-input-like-old'}
                         value={stateForAllInputs}
-                        onChange={(e) => setValue(e.currentTarget.value)}
+                        onKeyPress={(e) => prassButHandler(e)}
+                        onChange={(e) => changeHandler(e)}
                     />
                 </div>
                 {/*инпут с ошибкой:*/}
@@ -27,6 +39,7 @@ const Stand = () => {
                         id={'hw4-super-input-with-error'}
                         value={stateForAllInputs}
                         onChangeText={setValue}
+                        style={error ? {borderColor: "#CC1439"}: {}}
                         error={error}
                         onEnter={() => {
                             setError(
@@ -43,7 +56,11 @@ const Stand = () => {
             <div className={s.buttons}>
                 {/*обычная кнопка:*/}
                 <div>
-                    <SuperButton id={'hw4-super-button-default'}>
+                    <SuperButton id={'hw4-super-button-default'}
+                        // onMouseMove={()=> setClass("")}
+                        // className={"default"}
+                    >
+
                         default
                     </SuperButton>
                 </div>

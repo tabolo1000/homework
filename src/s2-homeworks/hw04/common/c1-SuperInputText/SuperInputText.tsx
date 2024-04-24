@@ -6,6 +6,7 @@ import React, {
     ReactNode,
 } from 'react'
 import s from './SuperInputText.module.css'
+import {InputMessageStyled} from "../../../hw01/HW1";
 
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>,
@@ -55,8 +56,16 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
         + (className ? ' ' + className : '') // задача на смешивание классов
 
     return (
+        <div>
+            <span
+                id={id ? id + '-span' : undefined}
+                className={finalSpanClassName}
+                style = {{color: "red"}}
+            >
+                {error}
+            </span>
         <div className={s.inputWrapper}>
-            <input
+            <InputMessageStyled
                 id={id}
                 type={'text'}
                 onChange={onChangeCallback}
@@ -64,12 +73,8 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
                 className={finalInputClassName}
                 {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
             />
-            <span
-                id={id ? id + '-span' : undefined}
-                className={finalSpanClassName}
-            >
-                {error}
-            </span>
+
+        </div>
         </div>
     )
 }
