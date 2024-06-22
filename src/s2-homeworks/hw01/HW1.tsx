@@ -55,9 +55,9 @@ export const friendMessage0: MessageType = {
 
 const HW1 = () => {
     return (
-        <HW1styled id={'hw1'}>
-            <HeaderStyled className={s2.hwTitle}>Homework #1</HeaderStyled>
-            <AllMassageStyled className={s2.hw}>
+        <MainBlockLesson id={'hw1'}>
+            <HeaderOfLesson className={s2.hwTitle}>Homework #1</HeaderOfLesson>
+            <ContentOfLesson className={s2.hw}>
                 {/*проверка отображения (не менять)*/}
                 <div>
                     <Message message={message0} />
@@ -66,8 +66,8 @@ const HW1 = () => {
 
                 {/*для автоматической проверки дз (не менять)*/}
                 <MessageSender M={Message} />
-            </AllMassageStyled>
-        </HW1styled>
+            </ContentOfLesson>
+        </MainBlockLesson>
     )
 }
 const COLOR_LINE = "#D9D9D9";
@@ -80,7 +80,7 @@ interface InputMessageProps {
 export const COLOR_BUTTON = "#0066CC";
  
 
-export const HeaderStyled = styled.div`
+export const HeaderOfLesson = styled.div`
  font-family: Montserrat;
  font-size: 22px;
  font-weight: 600;
@@ -90,7 +90,7 @@ export const HeaderStyled = styled.div`
  padding: 20px 0;
 `
 
-export const HW1styled = styled.div`
+export const MainBlockLesson = styled.div`
   padding: 3% 10%;
   //height: 100%;
   //display: flex;
@@ -99,7 +99,7 @@ export const HW1styled = styled.div`
   //align-items: center;
 `
 
-export const AllMassageStyled = styled.div`
+export const ContentOfLesson = styled.div`
   padding: 20px 0;
   border-top: 1px solid ${COLOR_LINE};
   border-bottom: 1px solid ${COLOR_LINE};

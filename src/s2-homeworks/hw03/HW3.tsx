@@ -3,7 +3,7 @@ import { v1 } from 'uuid'
 import s2 from '../../s1-main/App.module.css'
 import GreetingContainer from './GreetingContainer'
 import { BlockStyled } from '../hw02/HW2'
-import { AllMassageStyled, HeaderStyled, HW1styled } from '../hw01/HW1'
+import { ContentOfLesson, HeaderOfLesson, MainBlockLesson } from '../hw01/HW1'
 
 /*
 * 1 - описать тип UserType
@@ -41,17 +41,17 @@ const HW3 = () => {
     }
 
     return (
-        <HW1styled id={'hw3'}>
-            <HeaderStyled  className={s2.hwTitle}>Homework #3</HeaderStyled>
+        <MainBlockLesson id={'hw3'}>
+            <HeaderOfLesson  className={s2.hwTitle}>Homework #3</HeaderOfLesson>
             {/*для автоматической проверки дз (не менять)*/}
 
-            <AllMassageStyled className={s2.hw}>
+            <ContentOfLesson className={s2.hw}>
                 <GreetingContainer
                     users={users}
                     addUserCallback={addUserCallback}
                 />
-            </AllMassageStyled>
-        </HW1styled>
+            </ContentOfLesson>
+        </MainBlockLesson>
     )
 }
 

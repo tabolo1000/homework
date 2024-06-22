@@ -5,6 +5,7 @@ import React, {
     HTMLAttributes,
 } from 'react'
 import s from './SuperRadio.module.css'
+import { StyleCheckBox } from '../../HW7'
 
 type DefaultRadioPropsType = DetailedHTMLProps<
     InputHTMLAttributes<HTMLInputElement>,
@@ -34,23 +35,29 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
     spanProps,
     ...restProps
 }) => {
-    const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
+    const onChangeCallback = (i: number) => {
         // делают студенты
+       
+        !!onChangeOption && onChangeOption(++i)
     }
 
     const finalRadioClassName = s.radio + (className ? ' ' + className : '')
     const spanClassName = s.span + (spanProps?.className ? ' ' + spanProps.className : '')
 
     const mappedOptions: any[] = options
-        ? options.map((o) => (
-              <label key={name + '-' + o.id} className={s.label}>
+        ? options.map((o, i) => (
+              <label  key={name + '-' + o.id} className={s.label}>
                   <input
+                      
                       id={id + '-input-' + o.id}
                       className={finalRadioClassName}
                       type={'radio'}
+                      value={value}
+                      checked = {value === i+1}
+                      name={name}
                       // name, checked, value делают студенты
 
-                      onChange={onChangeCallback}
+                      onChange={()=>onChangeCallback(i)}
                       {...restProps}
                   />
                   <span
@@ -64,7 +71,7 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
           ))
         : []
 
-    return <div className={s.options}>{mappedOptions}</div>
+    return <StyleCheckBox className={s.options}>{mappedOptions}</StyleCheckBox>
 }
 
 export default SuperRadio

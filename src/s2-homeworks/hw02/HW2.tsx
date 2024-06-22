@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Affairs from './affairs/Affairs'
 import s2 from '../../s1-main/App.module.css'
-import {AllMassageStyled, HeaderStyled} from "../hw01/HW1";
+import {ContentOfLesson, HeaderOfLesson} from "../hw01/HW1";
 import styled from "styled-components";
 
 /*
@@ -65,15 +65,15 @@ function HW2() {
 
     return (
         <BlockStyled id={'hw2'}>
-            <HeaderStyled className={s2.hwTitle}>Homework #2</HeaderStyled>
-            <AllMassageStyled className={s2.hw}>
+            <HeaderOfLesson className={s2.hwTitle}>Homework #2</HeaderOfLesson>
+            <ContentOfLesson className={s2.hw}>
                 <Affairs
                     data={filteredAffairs}
                     setFilter={handlerSetFilter}
                     deleteAffairCallback={deleteAffairCallback}
                     filter={filter}
                 />
-            </AllMassageStyled>
+            </ContentOfLesson>
         </BlockStyled>
     )
 }

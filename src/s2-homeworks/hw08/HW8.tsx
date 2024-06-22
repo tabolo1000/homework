@@ -4,6 +4,8 @@ import s from './HW8.module.css'
 import s2 from '../../s1-main/App.module.css'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
 import User from './User'
+import styled from 'styled-components'
+import { ContentOfLesson, MainBlockLesson, HeaderOfLesson } from '../hw01/HW1'
 
 /*
 * 1 - дописать типы и логику (сортировка по имени, фильтрация по совершеннолетию) homeWorkReducer, проверить тестом
@@ -27,7 +29,7 @@ const initialPeople: UserType[] = [
     {_id: 5, name: 'Ирина', age: 55},
 ]
 
-const HW8 = () => {
+export const HW8 = () => {
     const [people, setPeople] = useState<UserType[]>(initialPeople)
     const [currentSort, setCurrentSort] = useState('')
 
@@ -54,9 +56,9 @@ const HW8 = () => {
     }
 
     return (
-        <div id={'hw3'}>
-            <div className={s2.hwTitle}>Homework #8</div>
-            <div className={s2.hw}>
+        <MainBlockLesson id={'hw3'}>
+            <HeaderOfLesson className={s2.hwTitle}>Homework #8</HeaderOfLesson>
+            <ContentOfLesson className={s2.hw}>
                 <div className={s.container}>
                     <div className={s.buttonsContainer}>
                         <SuperButton
@@ -85,7 +87,7 @@ const HW8 = () => {
                     <table id={'hw8-users'} className={s.users}>
                         <thead className={s.thead}>
                         <tr>
-                            <td className={s.nameCol}>Name</td>
+                            <td className={s.nameCol}>Full name</td>
                             <td className={s.ageCol}>Age</td>
                         </tr>
                         </thead>
@@ -93,9 +95,15 @@ const HW8 = () => {
                         <tbody>{finalPeople}</tbody>
                     </table>
                 </div>
-            </div>
-        </div>
+            </ContentOfLesson>
+        </MainBlockLesson>
     )
 }
+
+
+
+
+
+
 
 export default HW8

@@ -1,4 +1,4 @@
-import React, {ButtonHTMLAttributes, DetailedHTMLProps} from 'react'
+import React, {ButtonHTMLAttributes, DetailedHTMLProps, useState} from 'react'
 import s from './SuperButton.module.css'
 import { U_button } from '../../../../styles/styles'
 
@@ -37,6 +37,7 @@ const SuperButton: React.FC<SuperButtonPropsType> = (
             disabled={disabled}
             onClick={restProps.onClick}
             className={finalClassName}
+            // active={active}
             {...restProps} // отдаём кнопке остальные пропсы если они есть (children там внутри)
         />
     )

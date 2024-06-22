@@ -1,7 +1,7 @@
 import React from 'react'
 import s2 from '../../s1-main/App.module.css'
 import Stand from './Stand'
-import {AllMassageStyled, HeaderStyled, HW1styled} from "../hw01/HW1";
+import {ContentOfLesson, HeaderOfLesson, MainBlockLesson} from "../hw01/HW1";
 
 /*
 * 1 - понять (и простить) SuperInputText
@@ -12,13 +12,13 @@ import {AllMassageStyled, HeaderStyled, HW1styled} from "../hw01/HW1";
 
 const HW4 = () => {
     return (
-        <HW1styled id={'hw4'}>
-            <HeaderStyled  className={s2.hwTitle}>Homework #4</HeaderStyled >
+        <MainBlockLesson id={'hw4'}>
+            <HeaderOfLesson  className={s2.hwTitle}>Homework #4</HeaderOfLesson >
             {/*демонстрация возможностей компонент:*/}
-            <AllMassageStyled className={s2.hw}>
+            <ContentOfLesson className={s2.hw}>
                 <Stand />
-            </AllMassageStyled>
-        </HW1styled>
+            </ContentOfLesson>
+        </MainBlockLesson>
     )
 }
 

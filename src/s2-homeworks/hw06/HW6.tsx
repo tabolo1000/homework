@@ -4,7 +4,7 @@ import { restoreState, saveState } from './localStorage/localStorage'
 import s2 from '../../s1-main/App.module.css'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
 import s from './HW6.module.css'
-import { AllMassageStyled, HW1styled, HeaderStyled } from '../hw01/HW1'
+import { ContentOfLesson, MainBlockLesson, HeaderOfLesson } from '../hw01/HW1'
 
 /*
  * 1 - в файле SuperEditableSpan.tsx дописать логику функций onEnterCallback, onBlurCallback, onDoubleClickCallBack
@@ -20,16 +20,16 @@ const HW6 = () => {
     }
     const restore = () => {
         setValue(restoreState<string>('hw6-editable-span-value', ""))
-        // делают студенты
+        
 
     }
 
     return (
-        <HW1styled id={'hw6'}>
-            <HeaderStyled className={s2.hwTitle}>Homework #6</HeaderStyled>
+        <MainBlockLesson id={'hw6'}>
+            <HeaderOfLesson className={s2.hwTitle}>Homework #6</HeaderOfLesson>
 
             {/*демонстрация возможностей компоненты:*/}
-            <AllMassageStyled className={s2.hw}>
+            <ContentOfLesson className={s2.hw}>
                 <div className={s.editableSpanContainer}>
                     <SuperEditableSpan
                         id={'hw6-spanable-input'}
@@ -54,8 +54,8 @@ const HW6 = () => {
                         Get from ls
                     </SuperButton>
                 </div>
-            </AllMassageStyled>
-        </HW1styled>
+            </ContentOfLesson>
+        </MainBlockLesson>
     )
 }
 

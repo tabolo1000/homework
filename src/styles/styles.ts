@@ -5,7 +5,7 @@ interface ButtonProps {
     height?: string;
     color?: string;
     fontSize?: string;
-    margin?: string;
+    margin?: string; 
   }
 
 // const defaultStyles = css<ButtonProps>`
@@ -16,10 +16,11 @@ interface ButtonProps {
 export const U_button = styled.button<ButtonProps>`
     width: ${props => props.width || "116px"};
     height: ${props => props.height || "30px"};
-    color: ${props => props.color || "#FFFFFF"};
+    /*color: ${props => props.color};*/
     font-size: ${props => props.fontSize ? props.width : "12px"};
     margin: ${props => props.margin || "10px 24px 0 0"};
     border-radius: 3px;
+
 `
 
 const getDefault = (prop: string | undefined, defaultValue: string): string => prop || defaultValue;
