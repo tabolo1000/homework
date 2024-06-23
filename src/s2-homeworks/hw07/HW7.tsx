@@ -48,7 +48,6 @@ const HW7 = () => {
                     </div>
                 </StyleBlock>
             </ContentOfLesson>
-            {/* <h1 style={{flex}}></h1> */}
         </MainBlockLesson>
     )
 }

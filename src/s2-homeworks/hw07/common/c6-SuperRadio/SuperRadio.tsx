@@ -36,39 +36,37 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
     ...restProps
 }) => {
     const onChangeCallback = (i: number) => {
-        // делают студенты
-       
-        !!onChangeOption && onChangeOption(++i)
+       if(onChangeOption)  !!onChangeOption && onChangeOption(++i);
     }
 
     const finalRadioClassName = s.radio + (className ? ' ' + className : '')
     const spanClassName = s.span + (spanProps?.className ? ' ' + spanProps.className : '')
 
     const mappedOptions: any[] = options
-        ? options.map((o, i) => (
-              <label  key={name + '-' + o.id} className={s.label}>
-                  <input
-                      
-                      id={id + '-input-' + o.id}
-                      className={finalRadioClassName}
-                      type={'radio'}
-                      value={value}
-                      checked = {value === i+1}
-                      name={name}
-                      // name, checked, value делают студенты
+        ? options.map((o, i) => (   
+            <label key={name + '-' + o.id} className={s.label}>
+                <input
 
-                      onChange={()=>onChangeCallback(i)}
-                      {...restProps}
-                  />
-                  <span
-                      id={id + '-span-' + o.id}
-                      {...spanProps}
-                      className={spanClassName}
-                  >
-                      {o.value}
-                  </span>
-              </label>
-          ))
+                    id={id + '-input-' + o.id}
+                    className={finalRadioClassName}
+                    type={'radio'}
+                    value={o.id}
+                    checked={value === o.id}
+                    name={name}
+                    // name, checked, value делают студенты
+
+                    onChange={() => onChangeCallback(i)}
+                    {...restProps}
+                />
+                <span
+                    id={id + '-span-' + o.id}
+                    {...spanProps}
+                    className={spanClassName}
+                >
+                    {o.value}
+                </span>
+            </label>
+        ))
         : []
 
     return <StyleCheckBox className={s.options}>{mappedOptions}</StyleCheckBox>
