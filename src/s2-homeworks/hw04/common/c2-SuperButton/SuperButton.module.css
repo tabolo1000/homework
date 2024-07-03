@@ -8,14 +8,16 @@
     gap: 10px;
     border-radius: 3px 0 0 0;
     color: #FFFFFF;
+    font-weight: 600;
 }
 
 .disabled {
     width: 133px;
     height: 30px;
     background: rgba(103, 123, 143, 0.51);
-    color: rgba(123, 144, 166, 0.53);
+    color: #FFFFFF;
 }
+
 
 .secondary {
     background: #E5F0FA;

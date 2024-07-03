@@ -16,9 +16,10 @@ interface ButtonProps {
 export const U_button = styled.button<ButtonProps>`
     width: ${props => props.width || "116px"};
     height: ${props => props.height || "30px"};
-    /*color: ${props => props.color};*/
+    color: ${props => props.color};
     font-size: ${props => props.fontSize ? props.width : "12px"};
     margin: ${props => props.margin || "10px 24px 0 0"};
+    
     border-radius: 3px;
 
 `

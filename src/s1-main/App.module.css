@@ -3,9 +3,22 @@
 }
 
 .hw {
+    padding: 20px 0;
+    border-top: 1px solid #D9D9D9;
+    border-bottom: 1px solid #D9D9D9;
 
 }
 
 .hwTitle {
+    font-family: Montserrat;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26.82px;
+    text-align: left;
+    align-self: start;
+    padding: 20px 0;
+}
 
+.mainBlock {
+    padding: 3% 10%;
 }
