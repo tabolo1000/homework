@@ -49,9 +49,8 @@ function Clock() {
         `${date.getHours()}:${
         min<10?'0'+min:min }:${
         sec<10?'0'+sec:sec}` || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
-    const stringDate = `${
-        date.getFullYear()}.${addZero(date.getMonth())}.${addZero(date.getDate())}` || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
-
+    const stringDate = `${addZero(date.getDate())}.${addZero(date.getMonth()+1)}.${addZero(date.getFullYear())}` || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
+    console.log(date)
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
     const stringDay = weekDate.format(date) || <br/> // пишут студенты
     const stringMonth = monthDate.format(date) || <br/> // пишут студенты
