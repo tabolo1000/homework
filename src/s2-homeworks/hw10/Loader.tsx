@@ -20,4 +20,9 @@ export const Loader = () => (
 
 )
 
+
+
+
+
+
 /*<div className={s.loader}/>*/
