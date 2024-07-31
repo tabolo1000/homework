@@ -15,19 +15,19 @@ function HW11() {
     // for autotests // не менять // можно подсунуть в локалСторэдж нужные числа, чтоб увидеть как они отображаются
     const [value1, setValue1] = useState(restoreState<number>('hw11-value1', 0))
     const [value2, setValue2] = useState(restoreState<number>('hw11-value2', 100))
-    const [inp, setInp] = useState("")
 
-    const minDistance = 1;
     const change = (event: any, value: any) => {
         if(Array.isArray(value)){
             if(event.target !== null){
                 debugger
-                //setValue1(event.target.value[0])
+                setValue1(event.target.value[0])
                 setValue2(event.target.value[1])
             }
             return
         }
-        setValue1(event.target.value)
+        if(event.target.value < value2){
+            setValue1(event.target.value)
+        }
         // пишет студент // если пришёл массив - сохранить значения в оба useState, иначе в первый
     }
 

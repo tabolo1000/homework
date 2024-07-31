@@ -17,7 +17,6 @@ import {useAppDispatch, useAppSelector} from "../../hooks/useTypedHooks";
 const HW10 = () => {
     // useSelector, useDispatch // пишет студент
     const {isLoading} = useAppSelector(state => state.loading)
-    debugger
     const dispatch = useAppDispatch()
 
     const setLoading = () => { // пишет студент // показать крутилку на 1,5 секунд
