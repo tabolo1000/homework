@@ -1,5 +1,5 @@
 import React from 'react'
-import {Slider, SliderProps} from '@mui/material'
+import {Slider as SliderN, SliderProps} from '@mui/material'
 import { styled } from '@mui/material/styles';
 
 
@@ -7,7 +7,7 @@ import { styled } from '@mui/material/styles';
 
 const SuperRange: React.FC<SliderProps> = (props) => {
     return (
-        <PrettoSlider
+        <Slider
             sx={{ // стили для слайдера // пишет студент
             }}
             {...props} // отдаём слайдеру пропсы если они есть (value например там внутри)
@@ -18,7 +18,7 @@ const SuperRange: React.FC<SliderProps> = (props) => {
 export default SuperRange
 
 
-const PrettoSlider = styled(Slider)(({theme}) => ({
+const Slider = styled(SliderN)(({theme}) => ({
     color: '#00CC22',
     width: '150px',
     height: 4,
