@@ -22,7 +22,7 @@ function HW11() {
         if(Array.isArray(value)){
             if(event.target !== null){
                 debugger
-                setValue1(event.target.value[0])
+                //setValue1(event.target.value[0])
                 setValue2(event.target.value[1])
             }
             return
