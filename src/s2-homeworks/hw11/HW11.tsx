@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import s from './HW11.module.css';
 import s2 from '../../s1-main/App.module.css';
 import { restoreState } from '../hw06/localStorage/localStorage';
@@ -15,19 +15,37 @@ function HW11() {
     const [value1, setValue1] = useState(restoreState<number>('hw11-value1', 0));
     const [value2, setValue2] = useState(restoreState<number>('hw11-value2', 100));
 
-    const change = (event: Event, value: number | number[]) => {
-        if (Array.isArray(value)) {
+    enum range{
+        firstRangeBar = value1,
+        SeconsdRangeBar = value2,
+    }
+
+    const changeHandler = (event: Event, value: number | number[]) => {
+        if (typeof value === "object") {
             const [newValue1, newValue2] = value;
             if (newValue1 < value2) {
                 setValue1(newValue1);
             }
+            else{
+                setValue1(newValue1);
+                setValue2(value2+1)
+            }
             if (newValue2 > value1) {
                 setValue2(newValue2);
+            }
+            else{
+                setValue2(newValue2);
+                setValue1(newValue1 -1);
             }
         } else {
             if (value < value2) {
                 setValue1(value);
             }
+            else{
+                setValue1(value);
+                setValue2(value2+1)
+            }
+            
         }
     };
 
@@ -41,10 +59,10 @@ function HW11() {
                         <span id={'hw11-value'} className={s.number}>{value1}</span>
                         <SuperRange
                             id={'hw11-single-slider'}
-                            value={value1}
-                            onChange={change}
-                            disableSwap
+                            aria-label="first-range-homework"
                             size="small"
+                            value={range.firstRangeBar}
+                            onChange={changeHandler}
                             // сделать так чтоб value1 изменялось // пишет студент
                         />
                     </div>
@@ -53,10 +71,11 @@ function HW11() {
                         <span id={'hw11-value-1'} className={s.number}>{value1}</span>
                         <SuperRange
                             id={'hw11-double-slider'}
+                            aria-label="second-range-homework"
                             size="small"
                             disableSwap
-                            value={[value1, value2]}
-                            onChange={change}
+                            value={[range.firstRangeBar, range.SeconsdRangeBar]}
+                            onChange={changeHandler}
                             // сделать так чтоб value1/2 изменялось // пишет студент
                         />
                         <span id={'hw11-value-2'} className={s.number}>{value2}</span>
