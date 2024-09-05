@@ -1,8 +1,8 @@
 import React from 'react';
-import { Slider , SliderProps } from '@mui/material';
+import { Slider as SliderN, SliderProps } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-/*const Slider = styled(SliderN)(({ theme }) => ({
+const Slider = styled(SliderN)(({ theme }) => ({
     color: '#00CC22',
     width: '150px',
     height: 4,
@@ -26,7 +26,7 @@ import { styled } from '@mui/material/styles';
         color: theme.palette.mode === 'dark' ? '#bfbfbf' : '#8B8B8B',
         opacity: theme.palette.mode === 'dark' ? undefined : 1,
     },
-}));*/
+}));
 
 const SuperRange: React.FC<SliderProps> = (props) => {
     return (
