@@ -1,4 +1,4 @@
-const initState = {
+const initState: InitState = {
     isLoading: false,
 }
 /*Первый вызов: Проверка начального состояния
@@ -14,17 +14,16 @@ Redux вызывает редюсеры с action = { type: "@@redux/INIT" } д�
 /*@@redux/INIT: Этот тип действия используется для инициализации хранилища и получения начального состояния от всех редюсеров.
     @@redux/PROBE_UNKNOWN_ACTION: Этот тип действия используется для проверки того, что редюсеры корректно обрабатывают
 неизвестные действия и не возвращают undefined в качестве состояния.*/
-enum Action{
+enum Action {
     CHANGE_LOADING = 'CHANGE_LOADING'
 }
 
-export type RootLoadingType = loadingType
 
-export const loadingReducer = (state = initState, action: RootLoadingType): any => { // fix any
+
+export const loadingReducer: LoadingReducer = (state = initState, action) => { // fix any
     switch (action.type) {
-        case(Action.CHANGE_LOADING):
-            debugger
-            return {...state, isLoading: !action.isLoading}
+        case (Action.CHANGE_LOADING):
+            return { ...state, isLoading: !action.isLoading }
         default:
             return state
     }
@@ -33,7 +32,21 @@ export const loadingReducer = (state = initState, action: RootLoadingType): any 
 
 
 
-type loadingType = ReturnType<typeof loadingAC>
 
-export const loadingAC = (isLoading: boolean) => ({type: 'CHANGE_LOADING', isLoading} as const )
+
+export const loadingAC = (isLoading: boolean) => ({ type: 'CHANGE_LOADING', isLoading } as const)
+
+
+//----------------------------------types_loding_reducer---------------------------------------
+interface LoadingReducer {
+    (state: InitState | undefined, action: RootLoadingType): InitState
+}
+
+export type RootLoadingType = LoadingType
+
+type LoadingType = ReturnType<typeof loadingAC>
+
+type InitState = {
+    isLoading: boolean
+}
 

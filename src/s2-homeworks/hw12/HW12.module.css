@@ -3,7 +3,7 @@
     --background: #FFFFFF;
 }
 
-[data-theme='2'] {
+[data-theme='2']{
     --color: #000000;
     --background: #DDEEFF;
 }
@@ -13,11 +13,7 @@
     --background: #212A34;
 }
 
-html {
+html, select {
     background-color: var(--background);
     color: var(--color);
-}
-
-.select {
-
 }

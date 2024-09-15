@@ -1,9 +1,18 @@
 .select {
+    min-width: 171px;
+    min-height: 36px;
+    padding: 2px;
+    font-size: 14px;
+    text-transform: capitalize;
 }
 
 .select:focus {
+    box-shadow: 1px -1px 5px black;
+    width: 100px;
+    background-color: tra;
 }
 
 
 .option:hover {
+ 
 }

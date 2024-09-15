@@ -2,48 +2,53 @@ import React, {
     SelectHTMLAttributes,
     DetailedHTMLProps,
     ChangeEvent,
-} from 'react'
-import s from './SuperSelect.module.css'
+    useCallback,
+    useMemo,
+} from 'react';
+import s from './SuperSelect.module.css';
+import { Theme } from '../../../hw12/HW12';
 
 type DefaultSelectPropsType = DetailedHTMLProps<
     SelectHTMLAttributes<HTMLSelectElement>,
     HTMLSelectElement
->
+>;
 
 type SuperSelectPropsType = DefaultSelectPropsType & {
-    options?: any[]
-    onChangeOption?: (option: any) => void
-}
+    options?: Theme[];
+    onChangeOption?: (option: number) => void;
+};
 
-const SuperSelect: React.FC<SuperSelectPropsType> = ({
+const SuperSelect: React.FC<SuperSelectPropsType> = React.memo(({
     options,
     className,
-    onChange,
     onChangeOption,
     value,
     ...restProps
 }) => {
-    const mappedOptions: any[] = options
-        ? options.map((o) => (
-            <option
-                id={'hw7-option-' + o.id}
-                className={s.option}
-                key={o.id}
-                value={o.id}
-            >
-                {o.value}
-            </option>
-        ))
-        : [] // map options with key
+    const mappedOptions: JSX.Element[] | [] = useMemo(() => {
+        return options
+            ? options.map((o) => (
+                <option
+                    id={'hw7-option-' + o.id}
+                    className={s.option}
+                    key={o.id}
+                    value={o.id}
+                >
+                    {o.value}
+                </option>
+            ))
+            : []; // map options with key
+    }, [options]); // Include options in dependency array
 
-    const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
-        if (onChangeOption) {
-            onChangeOption(+e.currentTarget.value);
-        } 
-        //!!onChangeOption && onChangeOption(+e.currentTarget.value)
-    }
+    const onChangeCallback = useCallback(
+        (e: ChangeEvent<HTMLSelectElement>) => {
+            if (onChangeOption) {
+                onChangeOption(+e.currentTarget.value);
+            }
+        }
+        , [onChangeOption]);
 
-    const finalSelectClassName = s.select + (className ? ' ' + className : '')
+    const finalSelectClassName = s.select + (className ? ' ' + className : '');
 
     return (
         <select
@@ -54,7 +59,7 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
         >
             {mappedOptions}
         </select>
-    )
-}
+    );
+});
 
-export default SuperSelect
+export default SuperSelect;

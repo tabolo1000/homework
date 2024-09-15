@@ -1,4 +1,4 @@
-import {loadingReducer, RootLoadingType} from './loadingReducer'
+import {loadingReducer} from './loadingReducer'
 import {combineReducers, Dispatch, legacy_createStore} from 'redux'
 import { themeReducer } from '../../hw12/bll/themeReducer'
 import {useDispatch} from "react-redux";

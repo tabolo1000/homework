@@ -1,22 +1,41 @@
 .buttonsContainer {
+    display: flex;
+    align-items: baseline;
+    white-space: nowrap;
+    height: 50px;
 }
 
 .responseContainer {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    align-content: end;
+    padding: 5%;
+    width: 1048px;
 }
 
 .imageContainer {
+    min-width: 451px;
 }
 
 .image {
+    float: right;
+    
 }
 
-.textContainer{
+.textContainer {
+    font-family: Montserrat;
+    min-width: 510px;
+    font-size: 16px;
+    padding: 87px;
+
 }
 
 .code {
+    font-size: 30px;
+    padding-bottom: 12px;
 }
 
-.text {
-}
-.info {
-}
+.text {}
+
+.info {}
